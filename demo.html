@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS Chatbot SaaS - Widget Distribution</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 60px;
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .card h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .integration-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .method {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .method h3 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .code-block {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Monaco', 'Consolas', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+            margin: 15px 0;
+            position: relative;
+        }
+        
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        
+        .copy-btn:hover {
+            background: #5a67d8;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+        
+        .feature-icon {
+            background: #667eea;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .demo-section {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .demo-btn {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 10px;
+        }
+        
+        .demo-btn:hover {
+            background: #5a67d8;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .status {
+            background: #10b981;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        
+        .alert {
+            background: #fef3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        
+        .alert-success {
+            background: #d4edda;
+            border-color: #c3e6cb;
+            color: #155724;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 CS Chatbot SaaS</h1>
+            <p>Embeddable Customer Service Chatbot Widget</p>
+            <div class="status">✅ Backend Online • Document Ready</div>
+        </div>
+
+        <div class="card">
+            <h2>🚀 Super Easy Integration</h2>
+            <p>Integrate our intelligent customer service chatbot into your e-commerce site with just one line of code!</p>
+            
+            <div class="integration-methods">
+                <!-- Method 1: Direct Script -->
+                <div class="method">
+                    <h3>📋 Method 1: Direct Script Tag</h3>
+                    <p>Add this single line to your website's HTML:</p>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode('direct-script')">Copy</button>
+<span id="direct-script">&lt;script src="http://localhost:3001/chatbot-embed.js"&gt;&lt;/script&gt;</span>
+                    </div>
+                    <div class="alert alert-success">
+                        ✅ Perfect for static HTML sites, WordPress, or any website
+                    </div>
+                </div>
+
+                <!-- Method 2: Next.js -->
+                <div class="method">
+                    <h3>⚡ Method 2: Next.js Integration</h3>
+                    <p>For your Next.js e-commerce projects:</p>
+                    
+                    <strong>Option A: In _app.js</strong>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode('nextjs-app')">Copy</button>
+<div id="nextjs-app">import Script from 'next/script'
+
+export default function MyApp({ Component, pageProps }) {
+  return (
+    &lt;&gt;
+      &lt;Component {...pageProps} /&gt;
+      &lt;Script 
+        src="http://localhost:3001/chatbot-embed.js" 
+        strategy="afterInteractive"
+      /&gt;
+    &lt;/&gt;
+  )
+}</div>
+                    </div>
+
+                    <strong>Option B: In specific pages/components</strong>
+                    <div class="code-block">
+                        <button class="copy-btn" onclick="copyCode('nextjs-component')">Copy</button>
+<div id="nextjs-component">import Script from 'next/script'
+
+export default function HomePage() {
+  return (
+    &lt;div&gt;
+      {/* Your page content */}
+      &lt;h1&gt;Welcome to our store!&lt;/h1&gt;
+      
+      {/* Chatbot widget */}
+      &lt;Script 
+        src="http://localhost:3001/chatbot-embed.js" 
+        strategy="afterInteractive"
+      /&gt;
+    &lt;/div&gt;
+  )
+}</div>
+                    </div>
+                    
+                    <div class="alert alert-success">
+                        ✅ Automatic optimization with Next.js Script component
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>✨ Key Features</h2>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🌍</div>
+                    <div>
+                        <h4>Multilingual Support</h4>
+                        <p>Auto-detects Indonesian & English, responds in the same language</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🧠</div>
+                    <div>
+                        <h4>Smart Understanding</h4>
+                        <p>Understands slang, variations, and connects the dots with reasoning</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📱</div>
+                    <div>
+                        <h4>Mobile Responsive</h4>
+                        <p>Perfect experience on desktop, tablet, and mobile devices</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <div>
+                        <h4>Lightweight & Fast</h4>
+                        <p>Under 50KB total, doesn't slow down your website</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎨</div>
+                    <div>
+                        <h4>Customizable</h4>
+                        <p>Easy to customize colors, position, and behavior</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <div>
+                        <h4>Privacy Focused</h4>
+                        <p>No tracking, secure communication, respects user privacy</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>⚙️ Configuration Options</h2>
+            <p>Customize the widget by modifying the configuration in the script:</p>
+            
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode('config-example')">Copy</button>
+<div id="config-example">// Modify these in chatbot-embed.js
+const CHATBOT_CONFIG = {
+    apiUrl: 'http://127.0.0.1:8000',
+    
+    widget: {
+        title: 'Customer Service',           // Widget title
+        subtitle: 'Online • Ready to help', // Status text
+        position: 'bottom-right',            // bottom-right, bottom-left
+        colors: {
+            primary: '#667eea',              // Main color
+            secondary: '#764ba2',            // Gradient color
+        }
+    },
+    
+    behavior: {
+        autoOpen: false,        // Auto open on page load
+        showAfterScroll: false, // Show notification after scroll
+        rememberState: true     // Remember open/closed state
+    }
+};</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>📊 Widget API</h2>
+            <p>Control the widget programmatically from your JavaScript:</p>
+            
+            <div class="code-block">
+                <button class="copy-btn" onclick="copyCode('api-example')">Copy</button>
+<div id="api-example">// Available after widget loads
+window.ChatbotWidget.open();              // Open the chat window
+window.ChatbotWidget.close();             // Close the chat window
+window.ChatbotWidget.toggle();            // Toggle open/close
+window.ChatbotWidget.sendMessage("Hi!");  // Send a message programmatically
+window.ChatbotWidget.isOpen();            // Check if window is open</div>
+            </div>
+        </div>
+
+        <div class="alert">
+            <strong>🔧 Development Setup:</strong><br>
+            1. Start this HTML file on <code>http://localhost:3001</code><br>
+            2. Your backend is running on <code>ada metode pembayaran apa aja?</code><br>
+            3. Documents are pre-uploaded and ready<br>
+            4. Just copy the script tag to your e-commerce site!
+        </div>
+
+        <div class="demo-section">
+            <h2>🎯 Ready to Test?</h2>
+            <p>The widget is already loaded on this page - click the chat button in the bottom-right corner!</p>
+            
+            <a href="#" class="demo-btn" onclick="window.ChatbotWidget && window.ChatbotWidget.open(); return false;">
+                💬 Open Demo Chat
+            </a>
+            
+            <a href="#" class="demo-btn" onclick="testWidget(); return false;">
+                🧪 Test Widget API
+            </a>
+        </div>
+    </div>
+
+    <!-- Load the chatbot widget on this page for demo -->
+    <script>
+        // Create the embed script dynamically (simulating the actual embed)
+        (function() {
+            const script = document.createElement('script');
+            script.innerHTML = `
+                // Paste the entire chatbot-embed.js content here
+                // This is just for demo - in production, you'd load from external file
+                
+                ${
+                    // You would paste the actual chatbot-embed.js content here
+                    // For now, I'll create a minimal version for demo
+                    `console.log("Chatbot widget would load here");
+                    
+                    // Simple demo widget
+                    window.ChatbotWidget = {
+                        open: function() { alert("Demo: Chat would open here!\\nIn production, this connects to your deployed backend."); },
+                        close: function() { alert("Demo: Chat would close"); },
+                        toggle: function() { this.open(); },
+                        sendMessage: function(msg) { alert("Demo: Would send: " + msg); },
+                        isOpen: function() { return false; }
+                    };`
+                }
+            `;
+            document.body.appendChild(script);
+        })();
+
+        // Utility functions for the demo page
+        function copyCode(elementId) {
+            const element = document.getElementById(elementId);
+            const text = element.textContent || element.innerText;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = element.parentElement.querySelector('.copy-btn');
+                const originalText = btn.textContent;
+                btn.textContent = 'Copied!';
+                btn.style.background = '#10b981';
+                
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.background = '#667eea';
+                }, 2000);
+            }).catch(() => {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                alert('Code copied to clipboard!');
+            });
+        }
+        
+        function testWidget() {
+            if (window.ChatbotWidget) {
+                // Test sequence
+                alert("Testing widget API...");
+                window.ChatbotWidget.open();
+                
+                setTimeout(() => {
+                    window.ChatbotWidget.sendMessage("Test message from API");
+                }, 1000);
+            } else {
+                alert("Widget not loaded yet. In production, make sure the script is loaded first.");
+            }
+        }
+    </script>
+
+    <!-- Actual chatbot embed for testing (uncomment when you have the file) -->
+    <!-- <script src="./chatbot-embed.js"></script> -->
+</body>
+</html>
