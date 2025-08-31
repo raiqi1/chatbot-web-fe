@@ -393,7 +393,8 @@ function getCurrentUserId() {
 // Get base URL for your chatbot service
 function getChatbotBaseUrl() {
   // Replace with your actual chatbot service URL
-  return "http://localhost:3001";
+  // return "http://localhost:3001";
+  return "https://chatbot-web-fe.vercel.app";
 }
 
 // Open widget modal
