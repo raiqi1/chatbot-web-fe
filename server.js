@@ -156,7 +156,7 @@ server.listen(PORT, () => {
   console.log('   ✅ chatbot-embed.js (from "chatbot-embed.js" artifact)');
   console.log('   ✅ demo.html (from "Chatbot Widget" artifact)');
   console.log("");
-  console.log("🌍 Backend: https://chatbotku.duckdns.org (Ready!)");
+  console.log("🌍 Backend: https://chatbotku.mooo.com/ (Ready!)");
   console.log("");
   console.log("Press Ctrl+C to stop server");
 });

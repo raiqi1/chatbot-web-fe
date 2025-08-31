@@ -18,7 +18,7 @@
 
   // Configuration
   const CHATBOT_CONFIG = {
-    apiUrl: "http://localhost:8000",
+    apiUrl: "https://chatbotku.mooo.com",
     userId: getUserIdFromScript(),
     widget: {
       title: "Customer Service",
