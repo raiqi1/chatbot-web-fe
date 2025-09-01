@@ -383,13 +383,21 @@ function renderMessage(message) {
 // Widget Modal Functions - Add these to your existing dashboard.js
 
 // Get current user ID (you'll need to implement this based on your auth system)
+// Fixed getCurrentUserId function
 function getCurrentUserId() {
-  // Replace with your actual user ID retrieval logic
-  return (
-    localStorage.getItem("userId") || "54852c8d-0510-42b4-bde9-19f842bf7159"
-  );
-}
+  try {
+    const user = localStorage.getItem("user");
+    if (!user) {
+      return null;
+    }
 
+    const userData = JSON.parse(user);
+    return userData.id;
+  } catch (error) {
+    console.error("Error parsing user data:", error);
+    return null;
+  }
+}
 // Get base URL for your chatbot service
 function getChatbotBaseUrl() {
   // Replace with your actual chatbot service URL
