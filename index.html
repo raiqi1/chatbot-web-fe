@@ -309,6 +309,15 @@
             box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
         }
 
+        /* Chat Preview Containers */
+        .chat-preview-container {
+            display: none;
+        }
+
+        .chat-preview-container.active {
+            display: block;
+        }
+
         /* Interactive Chat Preview */
         .chat-preview {
             background: linear-gradient(145deg, #1E293B, #334155);
@@ -660,7 +669,7 @@
                     Completely isolated and secure - your data stays yours.
                 </p>
                 <div class="hero-buttons">
-                    <a href="register.html" class="btn btn-primary">
+                    <a href="login.html" class="btn btn-primary">
                         🚀 Start Free
                     </a>
                     <a href="login.html" class="btn btn-secondary">
@@ -691,45 +700,148 @@
                     </div>
                     
                     <div class="chatbot-demo">
-                        <div class="demo-description" id="demoDescription">
-                            <h3 id="demoTitle">Smart Document Analysis</h3>
-                            <p id="demoText">
-                                Upload your PDFs and watch as our AI instantly creates a searchable knowledge base. 
-                                Ask questions in natural language and get precise answers with context from your documents.
-                            </p>
-                            <ul class="demo-features" id="demoFeatures">
-                                <li>Instant PDF processing and text extraction</li>
-                                <li>Natural language question answering</li>
-                                <li>Contextual responses with source references</li>
-                                <li>Multi-document knowledge synthesis</li>
-                                <li>Real-time conversation interface</li>
-                                <li>Secure, private data handling</li>
-                            </ul>
+                        <div class="demo-description">
+                            <!-- Research Description -->
+                            <div class="demo-content active" id="research-description">
+                                <h3>Smart Document Analysis</h3>
+                                <p>
+                                    Upload your PDFs and watch as our AI instantly creates a searchable knowledge base. 
+                                    Ask questions in natural language and get precise answers with context from your documents.
+                                </p>
+                                <ul class="demo-features">
+                                    <li>Instant PDF processing and text extraction</li>
+                                    <li>Natural language question answering</li>
+                                    <li>Contextual responses with source references</li>
+                                    <li>Multi-document knowledge synthesis</li>
+                                    <li>Real-time conversation interface</li>
+                                    <li>Secure, private data handling</li>
+                                </ul>
+                            </div>
+
+                            <!-- Customer Service Description -->
+                            <div class="demo-content" id="customer-description">
+                                <h3>24/7 Customer Service Automation</h3>
+                                <p>
+                                    Transform your customer service with AI that knows your product manuals, policies, and FAQs inside out. 
+                                    Provide instant, accurate responses to customer inquiries anytime.
+                                </p>
+                                <ul class="demo-features">
+                                    <li>Instant responses to customer inquiries</li>
+                                    <li>Product knowledge from uploaded manuals</li>
+                                    <li>Policy and procedure automation</li>
+                                    <li>Multilingual customer support</li>
+                                    <li>Escalation to human agents when needed</li>
+                                    <li>Customer satisfaction tracking</li>
+                                </ul>
+                            </div>
+
+                            <!-- Education Description -->
+                            <div class="demo-content" id="education-description">
+                                <h3>Personalized Learning Support</h3>
+                                <p>
+                                    Upload textbooks, lecture notes, and study materials to create your personal AI tutor. 
+                                    Get explanations, practice questions, and study guidance tailored to your curriculum.
+                                </p>
+                                <ul class="demo-features">
+                                    <li>Personalized explanations from textbooks</li>
+                                    <li>Practice questions generation</li>
+                                    <li>Study plan recommendations</li>
+                                    <li>Concept clarification and examples</li>
+                                    <li>Progress tracking and assessment</li>
+                                    <li>Multi-language learning support</li>
+                                </ul>
+                            </div>
                         </div>
 
-                        <div class="chat-preview" id="chatPreview">
-                            <div class="chat-preview-header">
-                                <div class="chat-preview-avatar" id="chatAvatar">🤖</div>
-                                <div class="chat-preview-info">
-                                    <h4 id="chatTitle">PDF Assistant</h4>
-                                    <p id="chatSubtitle">Ready to help with your documents</p>
-                                </div>
-                                <div class="chat-preview-status">
-                                    <div class="status-dot"></div>
-                                    Online
+                        <!-- Chat Preview Containers -->
+                        <div class="chat-containers">
+                            <!-- Research Chat -->
+                            <div class="chat-preview-container active" id="research-chat">
+                                <div class="chat-preview">
+                                    <div class="chat-preview-header">
+                                        <div class="chat-preview-avatar">🤖</div>
+                                        <div class="chat-preview-info">
+                                            <h4>PDF Assistant</h4>
+                                            <p>Ready to help with your documents</p>
+                                        </div>
+                                        <div class="chat-preview-status">
+                                            <div class="status-dot"></div>
+                                            Online
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="chat-preview-messages" id="research-messages">
+                                        <!-- Messages will be populated by JavaScript -->
+                                    </div>
+                                    
+                                    <div class="chat-preview-input">
+                                        <div class="preview-input-container">
+                                            <input type="text" class="preview-input" placeholder="Try asking about your documents..." readonly>
+                                            <button class="preview-send">
+                                                <span style="color: white; font-size: 16px;">➤</span>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            
-                            <div class="chat-preview-messages" id="previewMessages">
-                                <!-- Messages will be populated by JavaScript -->
+
+                            <!-- Customer Service Chat -->
+                            <div class="chat-preview-container" id="customer-chat">
+                                <div class="chat-preview">
+                                    <div class="chat-preview-header">
+                                        <div class="chat-preview-avatar">🎧</div>
+                                        <div class="chat-preview-info">
+                                            <h4>Customer Support Bot</h4>
+                                            <p>Available 24/7 to help customers</p>
+                                        </div>
+                                        <div class="chat-preview-status">
+                                            <div class="status-dot"></div>
+                                            Online
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="chat-preview-messages" id="customer-messages">
+                                        <!-- Messages will be populated by JavaScript -->
+                                    </div>
+                                    
+                                    <div class="chat-preview-input">
+                                        <div class="preview-input-container">
+                                            <input type="text" class="preview-input" placeholder="Ask about products, policies, or issues..." readonly>
+                                            <button class="preview-send">
+                                                <span style="color: white; font-size: 16px;">➤</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            
-                            <div class="chat-preview-input">
-                                <div class="preview-input-container">
-                                    <input type="text" class="preview-input" id="previewInput" placeholder="Try asking about your documents..." readonly>
-                                    <button class="preview-send">
-                                        <span style="color: white; font-size: 16px;">➤</span>
-                                    </button>
+
+                            <!-- Education Chat -->
+                            <div class="chat-preview-container" id="education-chat">
+                                <div class="chat-preview">
+                                    <div class="chat-preview-header">
+                                        <div class="chat-preview-avatar">🎓</div>
+                                        <div class="chat-preview-info">
+                                            <h4>Learning Assistant</h4>
+                                            <p>Personalized tutoring from your materials</p>
+                                        </div>
+                                        <div class="chat-preview-status">
+                                            <div class="status-dot"></div>
+                                            Online
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="chat-preview-messages" id="education-messages">
+                                        <!-- Messages will be populated by JavaScript -->
+                                    </div>
+                                    
+                                    <div class="chat-preview-input">
+                                        <div class="preview-input-container">
+                                            <input type="text" class="preview-input" placeholder="Ask questions about your study materials..." readonly>
+                                            <button class="preview-send">
+                                                <span style="color: white; font-size: 16px;">➤</span>
+                                            </button>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -799,145 +911,91 @@
     <script>
         // Demo conversation data for different use cases
         const demoConversations = {
-            research: {
-                avatar: '🤖',
-                title: 'PDF Assistant',
-                subtitle: 'Ready to help with your documents',
-                placeholder: 'Try asking about your documents...',
-                description: {
-                    title: 'Smart Document Analysis',
-                    text: 'Upload your PDFs and watch as our AI instantly creates a searchable knowledge base. Ask questions in natural language and get precise answers with context from your documents.',
-                    features: [
-                        'Instant PDF processing and text extraction',
-                        'Natural language question answering',
-                        'Contextual responses with source references',
-                        'Multi-document knowledge synthesis',
-                        'Real-time conversation interface',
-                        'Secure, private data handling'
-                    ]
+            research: [
+                {
+                    type: 'bot',
+                    text: 'Hello! I can help you find information from your uploaded PDF documents. What would you like to know?',
+                    delay: 1000
                 },
-                messages: [
-                    {
-                        type: 'bot',
-                        text: 'Hello! I can help you find information from your uploaded PDF documents. What would you like to know?',
-                        delay: 1000
-                    },
-                    {
-                        type: 'user',
-                        text: 'What are the main points in my research paper?',
-                        delay: 2500
-                    },
-                    {
-                        type: 'bot',
-                        text: 'Based on your research paper "AI in Healthcare", the main points are:\n\n1. Machine learning improves diagnostic accuracy by 25%\n2. AI reduces treatment costs by up to 30%\n3. Patient outcomes show significant improvement\n4. Implementation challenges include data privacy',
-                        delay: 4000
-                    },
-                    {
-                        type: 'user',
-                        text: 'Tell me more about the cost reduction',
-                        delay: 6500
-                    },
-                    {
-                        type: 'bot',
-                        text: 'According to your document, the 30% cost reduction comes from:\n\n• Automated diagnosis reducing doctor consultation time\n• Early disease detection preventing expensive treatments\n• Streamlined administrative processes\n• Reduced medication errors',
-                        delay: 8000
-                    }
-                ]
-            },
-            customer: {
-                avatar: '🎧',
-                title: 'Customer Support Bot',
-                subtitle: 'Available 24/7 to help customers',
-                placeholder: 'Ask about products, policies, or issues...',
-                description: {
-                    title: '24/7 Customer Service Automation',
-                    text: 'Transform your customer service with AI that knows your product manuals, policies, and FAQs inside out. Provide instant, accurate responses to customer inquiries anytime.',
-                    features: [
-                        'Instant responses to customer inquiries',
-                        'Product knowledge from uploaded manuals',
-                        'Policy and procedure automation',
-                        'Multilingual customer support',
-                        'Escalation to human agents when needed',
-                        'Customer satisfaction tracking'
-                    ]
+                {
+                    type: 'user',
+                    text: 'What are the main points in my research paper?',
+                    delay: 2500
                 },
-                messages: [
-                    {
-                        type: 'bot',
-                        text: 'Hi! Welcome to TechCorp Support. I have access to all our product manuals and policies. How can I help you today?',
-                        delay: 1000
-                    },
-                    {
-                        type: 'user',
-                        text: 'My laptop won\'t turn on. What should I do?',
-                        delay: 2500
-                    },
-                    {
-                        type: 'bot',
-                        text: 'I\'ll help you troubleshoot this issue. Based on our technical manual, please try these steps:\n\n1. Check if the power adapter is properly connected\n2. Hold the power button for 10 seconds to reset\n3. Try a different power outlet\n4. Look for any LED indicators\n\nWhich step would you like to try first?',
-                        delay: 4000
-                    },
-                    {
-                        type: 'user',
-                        text: 'I tried all that. Still not working.',
-                        delay: 6500
-                    },
-                    {
-                        type: 'bot',
-                        text: 'I understand this is frustrating. Since the basic troubleshooting didn\'t work, this may require hardware inspection. I\'ll:\n\n1. Create a service ticket (#CS-2024-001)\n2. Schedule a technician visit within 24 hours\n3. Send you a temporary replacement if needed\n\nYour warranty covers this repair. Is this acceptable?',
-                        delay: 8000
-                    }
-                ]
-            },
-            education: {
-                avatar: '🎓',
-                title: 'Learning Assistant',
-                subtitle: 'Personalized tutoring from your materials',
-                placeholder: 'Ask questions about your study materials...',
-                description: {
-                    title: 'Personalized Learning Support',
-                    text: 'Upload textbooks, lecture notes, and study materials to create your personal AI tutor. Get explanations, practice questions, and study guidance tailored to your curriculum.',
-                    features: [
-                        'Personalized explanations from textbooks',
-                        'Practice questions generation',
-                        'Study plan recommendations',
-                        'Concept clarification and examples',
-                        'Progress tracking and assessment',
-                        'Multi-language learning support'
-                    ]
+                {
+                    type: 'bot',
+                    text: 'Based on your research paper "AI in Healthcare", the main points are:\n\n1. Machine learning improves diagnostic accuracy by 25%\n2. AI reduces treatment costs by up to 30%\n3. Patient outcomes show significant improvement\n4. Implementation challenges include data privacy',
+                    delay: 4000
                 },
-                messages: [
-                    {
-                        type: 'bot',
-                        text: 'Hello! I\'m your personal learning assistant. I\'ve analyzed your uploaded textbooks and can help explain concepts, create practice questions, and guide your studies.',
-                        delay: 1000
-                    },
-                    {
-                        type: 'user',
-                        text: 'Can you explain photosynthesis in simple terms?',
-                        delay: 2500
-                    },
-                    {
-                        type: 'bot',
-                        text: 'Based on your biology textbook, here\'s photosynthesis simplified:\n\n🌱 **What it is:** Plants making food from sunlight\n\n**Simple equation:** Sunlight + CO₂ + Water → Sugar + Oxygen\n\n**Think of it like:** Plants are solar-powered food factories! They take in carbon dioxide (like we breathe out) and water, then use sunlight to cook up sugar for energy.',
-                        delay: 4000
-                    },
-                    {
-                        type: 'user',
-                        text: 'Can you give me a practice quiz on this topic?',
-                        delay: 6500
-                    },
-                    {
-                        type: 'bot',
-                        text: 'Great! Here\'s a quick quiz based on your textbook:\n\n**Question 1:** What are the main inputs needed for photosynthesis?\na) Sugar and oxygen\nb) Sunlight, CO₂, and water\nc) Nitrogen and phosphorus\n\nTake your time! I\'ll explain the answer and give you more questions when you\'re ready.',
-                        delay: 8000
-                    }
-                ]
-            }
+                {
+                    type: 'user',
+                    text: 'Tell me more about the cost reduction',
+                    delay: 6500
+                },
+                {
+                    type: 'bot',
+                    text: 'According to your document, the 30% cost reduction comes from:\n\n• Automated diagnosis reducing doctor consultation time\n• Early disease detection preventing expensive treatments\n• Streamlined administrative processes\n• Reduced medication errors',
+                    delay: 8000
+                }
+            ],
+            customer: [
+                {
+                    type: 'bot',
+                    text: 'Hi! Welcome to TechCorp Support. I have access to all our product manuals and policies. How can I help you today?',
+                    delay: 1000
+                },
+                {
+                    type: 'user',
+                    text: 'My laptop won\'t turn on. What should I do?',
+                    delay: 2500
+                },
+                {
+                    type: 'bot',
+                    text: 'I\'ll help you troubleshoot this issue. Based on our technical manual, please try these steps:\n\n1. Check if the power adapter is properly connected\n2. Hold the power button for 10 seconds to reset\n3. Try a different power outlet\n4. Look for any LED indicators\n\nWhich step would you like to try first?',
+                    delay: 4000
+                },
+                {
+                    type: 'user',
+                    text: 'I tried all that. Still not working.',
+                    delay: 6500
+                },
+                {
+                    type: 'bot',
+                    text: 'I understand this is frustrating. Since the basic troubleshooting didn\'t work, this may require hardware inspection. I\'ll:\n\n1. Create a service ticket (#CS-2024-001)\n2. Schedule a technician visit within 24 hours\n3. Send you a temporary replacement if needed\n\nYour warranty covers this repair. Is this acceptable?',
+                    delay: 8000
+                }
+            ],
+            education: [
+                {
+                    type: 'bot',
+                    text: 'Hello! I\'m your personal learning assistant. I\'ve analyzed your uploaded textbooks and can help explain concepts, create practice questions, and guide your studies.',
+                    delay: 1000
+                },
+                {
+                    type: 'user',
+                    text: 'Can you explain photosynthesis in simple terms?',
+                    delay: 2500
+                },
+                {
+                    type: 'bot',
+                    text: 'Based on your biology textbook, here\'s photosynthesis simplified:\n\n🌱 **What it is:** Plants making food from sunlight\n\n**Simple equation:** Sunlight + CO₂ + Water → Sugar + Oxygen\n\n**Think of it like:** Plants are solar-powered food factories! They take in carbon dioxide (like we breathe out) and water, then use sunlight to cook up sugar for energy.',
+                    delay: 4000
+                },
+                {
+                    type: 'user',
+                    text: 'Can you give me a practice quiz on this topic?',
+                    delay: 6500
+                },
+                {
+                    type: 'bot',
+                    text: 'Great! Here\'s a quick quiz based on your textbook:\n\n**Question 1:** What are the main inputs needed for photosynthesis?\na) Sugar and oxygen\nb) Sunlight, CO₂, and water\nc) Nitrogen and phosphorus\n\nTake your time! I\'ll explain the answer and give you more questions when you\'re ready.',
+                    delay: 8000
+                }
+            ]
         };
 
         let currentUseCase = 'research';
-        let animationInterval;
+        let chatIntervals = {}; // Store intervals for each chat
 
         // Switch between use cases
         function switchUseCase(useCase) {
@@ -951,45 +1009,28 @@
             });
             document.querySelector(`[data-case="${useCase}"]`).classList.add('active');
             
-            // Update content
-            updateChatContent(useCase);
-            
-            // Restart animation
-            clearInterval(animationInterval);
-            setTimeout(() => startChatDemo(), 500);
-        }
-
-        // Update chat content for different use cases
-        function updateChatContent(useCase) {
-            const config = demoConversations[useCase];
-            
-            // Update chat header
-            document.getElementById('chatAvatar').textContent = config.avatar;
-            document.getElementById('chatTitle').textContent = config.title;
-            document.getElementById('chatSubtitle').textContent = config.subtitle;
-            document.getElementById('previewInput').placeholder = config.placeholder;
-            
-            // Update description
-            document.getElementById('demoTitle').textContent = config.description.title;
-            document.getElementById('demoText').textContent = config.description.text;
-            
-            // Update features list
-            const featuresList = document.getElementById('demoFeatures');
-            featuresList.innerHTML = '';
-            config.description.features.forEach(feature => {
-                const li = document.createElement('li');
-                li.textContent = feature;
-                featuresList.appendChild(li);
+            // Update content visibility
+            document.querySelectorAll('.demo-content').forEach(content => {
+                content.classList.remove('active');
             });
+            document.getElementById(`${useCase}-description`).classList.add('active');
+            
+            // Update chat container visibility
+            document.querySelectorAll('.chat-preview-container').forEach(container => {
+                container.classList.remove('active');
+            });
+            document.getElementById(`${useCase}-chat`).classList.add('active');
         }
 
-        // Animate demo conversation
-        function animatePreviewChat() {
-            const messagesContainer = document.getElementById('previewMessages');
+        // Animate specific chat
+        function animateChat(useCase) {
+            const messagesContainer = document.getElementById(`${useCase}-messages`);
+            const conversation = demoConversations[useCase];
+            
+            // Clear existing messages
             messagesContainer.innerHTML = '';
             
-            const conversation = demoConversations[currentUseCase].messages;
-            
+            // Add messages with delays
             conversation.forEach((message, index) => {
                 setTimeout(() => {
                     const messageElement = document.createElement('div');
@@ -1006,11 +1047,31 @@
             });
         }
 
-        // Start animation when page loads and repeat
-        function startChatDemo() {
-            animatePreviewChat();
-            // Repeat every 15 seconds
-            animationInterval = setInterval(animatePreviewChat, 15000);
+        // Start animation for a specific chat
+        function startChatAnimation(useCase) {
+            // Clear existing interval if any
+            if (chatIntervals[useCase]) {
+                clearInterval(chatIntervals[useCase]);
+            }
+            
+            // Start first animation immediately
+            animateChat(useCase);
+            
+            // Get total duration of conversation
+            const conversation = demoConversations[useCase];
+            const totalDuration = Math.max(...conversation.map(m => m.delay)) + 3000; // Add 3s buffer
+            
+            // Set interval to repeat animation
+            chatIntervals[useCase] = setInterval(() => {
+                animateChat(useCase);
+            }, totalDuration);
+        }
+
+        // Initialize all chat animations
+        function initializeChats() {
+            Object.keys(demoConversations).forEach(useCase => {
+                startChatAnimation(useCase);
+            });
         }
 
         // Check backend status
@@ -1059,12 +1120,29 @@
             }
         });
 
+        // Add CSS for demo content switching
+        const additionalCSS = `
+            .demo-content {
+                display: none;
+            }
+            
+            .demo-content.active {
+                display: block;
+            }
+        `;
+        
+        const style = document.createElement('style');
+        style.textContent = additionalCSS;
+        document.head.appendChild(style);
+
         // Initialize when page loads
         document.addEventListener('DOMContentLoaded', () => {
             checkBackendStatus();
             
-            // Start chat demo after a short delay
-            setTimeout(startChatDemo, 500);
+            // Start all chat animations after a short delay
+            setTimeout(() => {
+                initializeChats();
+            }, 1000);
             
             // Check status every 30 seconds
             setInterval(checkBackendStatus, 30000);
