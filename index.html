@@ -96,6 +96,19 @@
         .hero {
             padding: 120px 0 80px;
             text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(56, 189, 248, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+            pointer-events: none;
         }
 
         .hero h1 {
@@ -139,6 +152,7 @@
             gap: 10px;
             border: none;
             cursor: pointer;
+            position: relative;
         }
 
         .btn-primary {
@@ -163,6 +177,308 @@
             background: #38BDF8;
             color: #0F172A;
             transform: translateY(-3px);
+        }
+
+        /* Chatbot Preview Section */
+        .preview-section {
+            padding: 80px 0;
+            background: rgba(30, 41, 59, 0.3);
+            backdrop-filter: blur(10px);
+            margin: 40px 0;
+            border-radius: 20px;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .preview-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(56, 189, 248, 0.03) 0%, transparent 50%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .preview-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .preview-section h2 {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            color: #38BDF8;
+        }
+
+        .preview-section .subtitle {
+            text-align: center;
+            font-size: 18px;
+            margin-bottom: 60px;
+            color: #CBD5E1;
+            opacity: 0.9;
+        }
+
+        .chatbot-demo {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .demo-description {
+            padding-left: 20px;
+        }
+
+        .demo-description h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #38BDF8;
+            font-weight: 600;
+        }
+
+        .demo-description p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #CBD5E1;
+            margin-bottom: 30px;
+        }
+
+        .demo-features {
+            list-style: none;
+            padding: 0;
+        }
+
+        .demo-features li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 16px;
+            color: #CBD5E1;
+        }
+
+        .demo-features li::before {
+            content: '✅';
+            margin-right: 12px;
+            font-size: 16px;
+        }
+
+        /* Use Case Tabs */
+        .use-case-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            background: rgba(30, 41, 59, 0.6);
+            border: 2px solid rgba(56, 189, 248, 0.3);
+            color: #CBD5E1;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tab-btn:hover {
+            border-color: #38BDF8;
+            background: rgba(56, 189, 248, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+            border-color: #3B82F6;
+            color: white;
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Interactive Chat Preview */
+        .chat-preview {
+            background: linear-gradient(145deg, #1E293B, #334155);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            position: relative;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .chat-preview-header {
+            background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .chat-preview-avatar {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .chat-preview-info h4 {
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .chat-preview-info p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 12px;
+            margin: 2px 0 0 0;
+        }
+
+        .chat-preview-status {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 12px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: #00FF87;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { 
+                transform: scale(1); 
+                opacity: 1; 
+            }
+            50% { 
+                transform: scale(1.2); 
+                opacity: 0.7;
+            }
+            100% { 
+                transform: scale(1); 
+                opacity: 1; 
+            }
+        }
+
+        .chat-preview-messages {
+            height: 300px;
+            overflow-y: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .preview-message {
+            max-width: 85%;
+            padding: 12px 16px;
+            border-radius: 18px;
+            font-size: 14px;
+            line-height: 1.4;
+            opacity: 0;
+            animation: messageAppear 0.5s ease-out forwards;
+        }
+
+        .preview-message.user {
+            background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 6px;
+        }
+
+        .preview-message.bot {
+            background: rgba(56, 189, 248, 0.1);
+            color: #CBD5E1;
+            align-self: flex-start;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-bottom-left-radius: 6px;
+        }
+
+        @keyframes messageAppear {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .chat-preview-input {
+            padding: 15px 20px;
+            border-top: 1px solid rgba(56, 189, 248, 0.2);
+            background: rgba(15, 23, 42, 0.5);
+        }
+
+        .preview-input-container {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .preview-input {
+            flex: 1;
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 25px;
+            padding: 12px 16px;
+            color: #CBD5E1;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .preview-input:focus {
+            border-color: #38BDF8;
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.1);
+        }
+
+        .preview-send {
+            background: linear-gradient(135deg, #3B82F6, #1D4ED8);
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .preview-send:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
         }
 
         /* Features Section */
@@ -209,6 +525,11 @@
         .feature-icon {
             font-size: 48px;
             margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1);
         }
 
         .feature-card h3 {
@@ -238,7 +559,23 @@
             color: #CBD5E1;
         }
 
-        /* Responsive */
+        /* Status Badge */
+        .status-badge {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(59, 130, 246, 0.9) 100%);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            font-size: 14px;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(15, 23, 42, 0.3);
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
             .nav-links {
                 gap: 15px;
@@ -268,96 +605,33 @@
                 justify-content: center;
             }
 
+            .chatbot-demo {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .demo-description {
+                padding-left: 0;
+                order: 2;
+            }
+
+            .chat-preview {
+                order: 1;
+                max-width: 350px;
+                margin: 0 auto;
+            }
+
             .features-grid {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
         }
 
-        /* Status Badge */
-        .status-badge {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(59, 130, 246, 0.9) 100%);
-            color: white;
-            padding: 12px 20px;
-            border-radius: 25px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(56, 189, 248, 0.3);
-            font-size: 14px;
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(15, 23, 42, 0.3);
-        }
-
-        .status-dot {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            background: #00FF87;
-            border-radius: 50%;
-            margin-right: 8px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { 
-                transform: scale(1); 
-                opacity: 1; 
-                box-shadow: 0 0 0 0 rgba(0, 255, 135, 0.7);
+        @media (max-width: 480px) {
+            .chat-preview {
+                max-width: 100%;
             }
-            50% { 
-                transform: scale(1.2); 
-                opacity: 0.7;
-                box-shadow: 0 0 0 10px rgba(0, 255, 135, 0);
-            }
-            100% { 
-                transform: scale(1); 
-                opacity: 1; 
-                box-shadow: 0 0 0 0 rgba(0, 255, 135, 0);
-            }
-        }
-
-        /* Additional animated background elements */
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 20%, rgba(56, 189, 248, 0.1) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
-            pointer-events: none;
-        }
-
-        .hero {
-            position: relative;
-        }
-
-        /* Additional modern touches */
-        .feature-card:hover .feature-icon {
-            transform: scale(1.1);
-            transition: transform 0.3s ease;
-        }
-
-        /* Glowing effect for buttons */
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, #3B82F6, #1D4ED8);
-            border-radius: inherit;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .btn-primary:hover::before {
-            opacity: 0.2;
         }
     </style>
 </head>
@@ -370,7 +644,7 @@
                 <div class="nav-links">
                     <a href="#features" class="nav-link">Features</a>
                     <a href="login.html" class="nav-link secondary">Login</a>
-                    <a href="register.html" class="nav-link primary">Get Started</a>
+                    <a href="login.html" class="nav-link primary">Get Started</a>
                 </div>
             </nav>
         </div>
@@ -392,6 +666,74 @@
                     <a href="login.html" class="btn btn-secondary">
                         👋 Sign In
                     </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chatbot Preview Section -->
+        <section class="preview-section">
+            <div class="container">
+                <div class="preview-content">
+                    <h2>See It In Action</h2>
+                    <p class="subtitle">Experience how our AI chatbot works across different use cases</p>
+                    
+                    <!-- Use Case Tabs -->
+                    <div class="use-case-tabs">
+                        <button class="tab-btn active" data-case="research" onclick="switchUseCase('research')">
+                            📚 Document Research
+                        </button>
+                        <button class="tab-btn" data-case="customer" onclick="switchUseCase('customer')">
+                            🎧 Customer Service
+                        </button>
+                        <button class="tab-btn" data-case="education" onclick="switchUseCase('education')">
+                            🎓 Education Support
+                        </button>
+                    </div>
+                    
+                    <div class="chatbot-demo">
+                        <div class="demo-description" id="demoDescription">
+                            <h3 id="demoTitle">Smart Document Analysis</h3>
+                            <p id="demoText">
+                                Upload your PDFs and watch as our AI instantly creates a searchable knowledge base. 
+                                Ask questions in natural language and get precise answers with context from your documents.
+                            </p>
+                            <ul class="demo-features" id="demoFeatures">
+                                <li>Instant PDF processing and text extraction</li>
+                                <li>Natural language question answering</li>
+                                <li>Contextual responses with source references</li>
+                                <li>Multi-document knowledge synthesis</li>
+                                <li>Real-time conversation interface</li>
+                                <li>Secure, private data handling</li>
+                            </ul>
+                        </div>
+
+                        <div class="chat-preview" id="chatPreview">
+                            <div class="chat-preview-header">
+                                <div class="chat-preview-avatar" id="chatAvatar">🤖</div>
+                                <div class="chat-preview-info">
+                                    <h4 id="chatTitle">PDF Assistant</h4>
+                                    <p id="chatSubtitle">Ready to help with your documents</p>
+                                </div>
+                                <div class="chat-preview-status">
+                                    <div class="status-dot"></div>
+                                    Online
+                                </div>
+                            </div>
+                            
+                            <div class="chat-preview-messages" id="previewMessages">
+                                <!-- Messages will be populated by JavaScript -->
+                            </div>
+                            
+                            <div class="chat-preview-input">
+                                <div class="preview-input-container">
+                                    <input type="text" class="preview-input" id="previewInput" placeholder="Try asking about your documents..." readonly>
+                                    <button class="preview-send">
+                                        <span style="color: white; font-size: 16px;">➤</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -455,6 +797,222 @@
     </div>
 
     <script>
+        // Demo conversation data for different use cases
+        const demoConversations = {
+            research: {
+                avatar: '🤖',
+                title: 'PDF Assistant',
+                subtitle: 'Ready to help with your documents',
+                placeholder: 'Try asking about your documents...',
+                description: {
+                    title: 'Smart Document Analysis',
+                    text: 'Upload your PDFs and watch as our AI instantly creates a searchable knowledge base. Ask questions in natural language and get precise answers with context from your documents.',
+                    features: [
+                        'Instant PDF processing and text extraction',
+                        'Natural language question answering',
+                        'Contextual responses with source references',
+                        'Multi-document knowledge synthesis',
+                        'Real-time conversation interface',
+                        'Secure, private data handling'
+                    ]
+                },
+                messages: [
+                    {
+                        type: 'bot',
+                        text: 'Hello! I can help you find information from your uploaded PDF documents. What would you like to know?',
+                        delay: 1000
+                    },
+                    {
+                        type: 'user',
+                        text: 'What are the main points in my research paper?',
+                        delay: 2500
+                    },
+                    {
+                        type: 'bot',
+                        text: 'Based on your research paper "AI in Healthcare", the main points are:\n\n1. Machine learning improves diagnostic accuracy by 25%\n2. AI reduces treatment costs by up to 30%\n3. Patient outcomes show significant improvement\n4. Implementation challenges include data privacy',
+                        delay: 4000
+                    },
+                    {
+                        type: 'user',
+                        text: 'Tell me more about the cost reduction',
+                        delay: 6500
+                    },
+                    {
+                        type: 'bot',
+                        text: 'According to your document, the 30% cost reduction comes from:\n\n• Automated diagnosis reducing doctor consultation time\n• Early disease detection preventing expensive treatments\n• Streamlined administrative processes\n• Reduced medication errors',
+                        delay: 8000
+                    }
+                ]
+            },
+            customer: {
+                avatar: '🎧',
+                title: 'Customer Support Bot',
+                subtitle: 'Available 24/7 to help customers',
+                placeholder: 'Ask about products, policies, or issues...',
+                description: {
+                    title: '24/7 Customer Service Automation',
+                    text: 'Transform your customer service with AI that knows your product manuals, policies, and FAQs inside out. Provide instant, accurate responses to customer inquiries anytime.',
+                    features: [
+                        'Instant responses to customer inquiries',
+                        'Product knowledge from uploaded manuals',
+                        'Policy and procedure automation',
+                        'Multilingual customer support',
+                        'Escalation to human agents when needed',
+                        'Customer satisfaction tracking'
+                    ]
+                },
+                messages: [
+                    {
+                        type: 'bot',
+                        text: 'Hi! Welcome to TechCorp Support. I have access to all our product manuals and policies. How can I help you today?',
+                        delay: 1000
+                    },
+                    {
+                        type: 'user',
+                        text: 'My laptop won\'t turn on. What should I do?',
+                        delay: 2500
+                    },
+                    {
+                        type: 'bot',
+                        text: 'I\'ll help you troubleshoot this issue. Based on our technical manual, please try these steps:\n\n1. Check if the power adapter is properly connected\n2. Hold the power button for 10 seconds to reset\n3. Try a different power outlet\n4. Look for any LED indicators\n\nWhich step would you like to try first?',
+                        delay: 4000
+                    },
+                    {
+                        type: 'user',
+                        text: 'I tried all that. Still not working.',
+                        delay: 6500
+                    },
+                    {
+                        type: 'bot',
+                        text: 'I understand this is frustrating. Since the basic troubleshooting didn\'t work, this may require hardware inspection. I\'ll:\n\n1. Create a service ticket (#CS-2024-001)\n2. Schedule a technician visit within 24 hours\n3. Send you a temporary replacement if needed\n\nYour warranty covers this repair. Is this acceptable?',
+                        delay: 8000
+                    }
+                ]
+            },
+            education: {
+                avatar: '🎓',
+                title: 'Learning Assistant',
+                subtitle: 'Personalized tutoring from your materials',
+                placeholder: 'Ask questions about your study materials...',
+                description: {
+                    title: 'Personalized Learning Support',
+                    text: 'Upload textbooks, lecture notes, and study materials to create your personal AI tutor. Get explanations, practice questions, and study guidance tailored to your curriculum.',
+                    features: [
+                        'Personalized explanations from textbooks',
+                        'Practice questions generation',
+                        'Study plan recommendations',
+                        'Concept clarification and examples',
+                        'Progress tracking and assessment',
+                        'Multi-language learning support'
+                    ]
+                },
+                messages: [
+                    {
+                        type: 'bot',
+                        text: 'Hello! I\'m your personal learning assistant. I\'ve analyzed your uploaded textbooks and can help explain concepts, create practice questions, and guide your studies.',
+                        delay: 1000
+                    },
+                    {
+                        type: 'user',
+                        text: 'Can you explain photosynthesis in simple terms?',
+                        delay: 2500
+                    },
+                    {
+                        type: 'bot',
+                        text: 'Based on your biology textbook, here\'s photosynthesis simplified:\n\n🌱 **What it is:** Plants making food from sunlight\n\n**Simple equation:** Sunlight + CO₂ + Water → Sugar + Oxygen\n\n**Think of it like:** Plants are solar-powered food factories! They take in carbon dioxide (like we breathe out) and water, then use sunlight to cook up sugar for energy.',
+                        delay: 4000
+                    },
+                    {
+                        type: 'user',
+                        text: 'Can you give me a practice quiz on this topic?',
+                        delay: 6500
+                    },
+                    {
+                        type: 'bot',
+                        text: 'Great! Here\'s a quick quiz based on your textbook:\n\n**Question 1:** What are the main inputs needed for photosynthesis?\na) Sugar and oxygen\nb) Sunlight, CO₂, and water\nc) Nitrogen and phosphorus\n\nTake your time! I\'ll explain the answer and give you more questions when you\'re ready.',
+                        delay: 8000
+                    }
+                ]
+            }
+        };
+
+        let currentUseCase = 'research';
+        let animationInterval;
+
+        // Switch between use cases
+        function switchUseCase(useCase) {
+            if (currentUseCase === useCase) return;
+            
+            currentUseCase = useCase;
+            
+            // Update tab styling
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            document.querySelector(`[data-case="${useCase}"]`).classList.add('active');
+            
+            // Update content
+            updateChatContent(useCase);
+            
+            // Restart animation
+            clearInterval(animationInterval);
+            setTimeout(() => startChatDemo(), 500);
+        }
+
+        // Update chat content for different use cases
+        function updateChatContent(useCase) {
+            const config = demoConversations[useCase];
+            
+            // Update chat header
+            document.getElementById('chatAvatar').textContent = config.avatar;
+            document.getElementById('chatTitle').textContent = config.title;
+            document.getElementById('chatSubtitle').textContent = config.subtitle;
+            document.getElementById('previewInput').placeholder = config.placeholder;
+            
+            // Update description
+            document.getElementById('demoTitle').textContent = config.description.title;
+            document.getElementById('demoText').textContent = config.description.text;
+            
+            // Update features list
+            const featuresList = document.getElementById('demoFeatures');
+            featuresList.innerHTML = '';
+            config.description.features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                featuresList.appendChild(li);
+            });
+        }
+
+        // Animate demo conversation
+        function animatePreviewChat() {
+            const messagesContainer = document.getElementById('previewMessages');
+            messagesContainer.innerHTML = '';
+            
+            const conversation = demoConversations[currentUseCase].messages;
+            
+            conversation.forEach((message, index) => {
+                setTimeout(() => {
+                    const messageElement = document.createElement('div');
+                    messageElement.className = `preview-message ${message.type}`;
+                    messageElement.style.animationDelay = '0s';
+                    
+                    // Format text with line breaks
+                    const formattedText = message.text.replace(/\n/g, '<br>');
+                    messageElement.innerHTML = formattedText;
+                    
+                    messagesContainer.appendChild(messageElement);
+                    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+                }, message.delay);
+            });
+        }
+
+        // Start animation when page loads and repeat
+        function startChatDemo() {
+            animatePreviewChat();
+            // Repeat every 15 seconds
+            animationInterval = setInterval(animatePreviewChat, 15000);
+        }
+
         // Check backend status
         async function checkBackendStatus() {
             const statusBadge = document.getElementById('status-badge');
@@ -491,12 +1049,6 @@
             });
         });
 
-        // Check status on load
-        checkBackendStatus();
-        
-        // Check status every 30 seconds
-        setInterval(checkBackendStatus, 30000);
-
         // Add scroll effect to header
         window.addEventListener('scroll', () => {
             const header = document.querySelector('.header');
@@ -505,6 +1057,43 @@
             } else {
                 header.style.background = 'rgba(15, 23, 42, 0.95)';
             }
+        });
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            checkBackendStatus();
+            
+            // Start chat demo after a short delay
+            setTimeout(startChatDemo, 500);
+            
+            // Check status every 30 seconds
+            setInterval(checkBackendStatus, 30000);
+        });
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        window.addEventListener('load', () => {
+            const animateElements = document.querySelectorAll('.feature-card, .chat-preview');
+            animateElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
         });
     </script>
 </body>
